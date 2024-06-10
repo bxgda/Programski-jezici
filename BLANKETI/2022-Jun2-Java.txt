@@ -1,0 +1,47 @@
+7.	
+
+	public enum FizickaVelicina {
+		SNAGA {
+			public char jedinicaMere() {
+				return 'W';
+			}
+		},
+		ENERGIJA {
+			public char jedinicaMere() {
+				return 'J';
+			}
+		};
+		
+		public abstract char jedinicaMere();
+	}
+	
+
+8.	
+
+	public static void stampajRekurzivno(int broj) {
+		
+		if (broj == 0)
+			return;
+		
+		stampajRekurzivno(broj/10);
+		
+		System.out.println(broj % 10);
+	}
+	
+	public static void stampaj(int broj) {
+		
+		while (broj != 0) {
+			System.out.println(broj%10);
+			broj /= 10;
+		}
+		
+	}
+	
+	
+9.
+
+	Posto klasa implementira interfejs Comparable<Klasa> mora da se override-uje metod compareTo
+	
+	public int compareTo(Klasa k) {
+		return ((Integer)broj).compareTo(k.broj);
+	}

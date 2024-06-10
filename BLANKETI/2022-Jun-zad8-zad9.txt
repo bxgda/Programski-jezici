@@ -1,0 +1,79 @@
+8.
+	Moze da se kao ulazni parametar prosledi niz od tri elementa gde ce se upisu prvi, srednji i poslednji
+
+	public class MainClass {
+		public static void main(String[] args) {
+		
+			int niz[] = {1, 2, 3, 4, 5};
+			int rez[] = new int[3];
+		
+			prviSrednjiPoslednji(niz, rez);
+		
+			for (int i = 0; i < 3; ++i)
+				System.out.println(rez[i]);
+		}
+	
+		public static void prviSrednjiPoslednji(int niz[], int rez[]) {
+			rez[0] = niz[0];
+			rez[1] = niz[niz.length/2];
+			rez[2] = niz[niz.length - 1];
+		}
+	}
+	
+
+
+	Moze da se napravi klasa koja ima tri int atributa koji ce cuvaju taj rez i da se taj objekat prosledi
+	kao argument metode
+
+	public void prviSrednjiPoslednji(int niz[], ImeKlase k) {
+		k.prvi = niz[0];
+		...
+		...
+	}
+
+	Vrv moze jos nekako nego mi ne pada na pamet
+
+
+
+9.
+	Ovo je slican primer kao od martinove prezentacije samo prostije
+	Bukv klasicna klasa samo na obe metode treba dodati kljucnu rez synchronized
+	Znaci: public synchronized void Add(int el) { ... }
+	       public synchronized void Remove(int pozicija) { ... }
+
+	Tako se zakljucava objekat kad jedna niz dodaje ili brise element i druga nit ne moze da izvrsi ove metode.
+	
+	
+	public class Buffer {
+
+		private int niz[];
+		private int dim;
+		private int brTr;
+		
+		public Buffer(int dim) {
+			this.dim = dim;
+			this.brTr = 0;
+			this.niz = new int[dim];
+		}
+		
+		// bacam RuntimeException jer ne mora pisem throws posle imena funkcija
+		// i ne mora rokam u try-catch u main (al moze i throw new Exception("poruka") al onda
+		// posle imena funkcije ide throws Exception
+		public synchronized void Add(int el) {
+			if (brTr == dim)
+				throw new RuntimeException("Nema mesta vise");
+			
+			niz[brTr++] = el;
+		}
+		
+		public synchronized void Remove(int pos) {
+			
+			if (pos < 0 || pos >= brTr || brTr == 0)
+				throw new RuntimeException("Greska. Indeks van granica ili je niz prazan.");
+		
+			for (int j = pos; j < brTr - 1; ++j) {
+				niz[j] = niz[j+1];
+			}
+			--brTr;
+		}	
+	}

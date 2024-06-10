@@ -1,0 +1,35 @@
+10.
+
+	a) kad je KompleksniBroj struktura sve radi ocekivano
+		
+			0 + j0
+			1 + j1
+			2 + j2
+			3 + j3
+			
+	b) kad je KompleksniBroj klasa onda se sa new KompleksniBroj[4] ne kreiraju objekti vec
+		se samo zauzme prostor. Zato ovaj program puca cim proba da pristupi property-u niz[i].Imaginarni.
+		Da bi ovaj kod radio mora pre prve for petlje jos jedna for petlja gde ce da se inicijalizuje svaki
+		element:
+			for (int i = 0; i < niz.Length; ++i)
+				niz[i] = new KompleksniBroj(i, i);
+				
+				
+11.
+
+	Treba se obrati paznja na prenos parametara.
+	
+	pi je tipa double, sto je primitivni tip i prenosi se po vrednosti, tj unutar tela funkcije
+	se koristi kopija. Zato njegova promena nece uticati na stvarnu promenljivu iz main-a.
+	
+	Za promenljivu danas je caka sto je DateTime struktura, a ne klasa, a strukture se prenose takodje po
+	vrednosti, pa ni ova promena nece uticati na stvarnu promenljivu iz main-a.
+	
+	Jedino sto ce stvarno da se promeni je promenljiva tipa KompleksniBroj jer je to klasa i menja se
+	konkretan objekat.
+	
+	Ocekivan ispis je:
+		
+		3.14
+		Thursday
+		2 + j1

@@ -1,0 +1,42 @@
+7.
+	int N = 10;
+	Inter niz[] = new Inter[N];
+	for (int i = 0; i < N; ++i) {
+		if (i % 2 == 0)
+			niz[i] = new Prva();
+		else
+			niz[i] = new Druga();
+	}
+
+
+8.
+	a)
+		Kljucna rec final zabranjuje predefinisanje te metode u izvedenim klasama
+		
+		public class MojaKlasa {
+			public final void MojaMetoda() {
+				// neki kod...
+			}
+		}
+		
+	b)
+		Dodavanjem kljucne reci final ispred kljucne reci class
+		
+		public final class MojaKlasa {
+			public final void MojaMetoda() {
+				// neki kod...
+			}
+		}
+		
+	c)
+		String
+		Integer
+		Collections
+		....
+		
+9.
+	Ce izbaci upozorenje za sirove tipove (raw types), jer k1 je sirov tip
+	i treba biti parametrizovan. Isto tako i za k4.
+	
+	I unchecked conversion ce ima za Klasa<Float> k2 = k1, mada nzm dal je ideja
+	zadatka da se to napise. Msm da je fora s ovim sirovim tipovima.

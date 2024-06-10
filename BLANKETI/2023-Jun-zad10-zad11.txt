@@ -1,0 +1,28 @@
+Zadaci 10 i 11 iz C#-a
+
+10.
+	Uociti bitske operatore (| i &)
+	Zameniti vrednosti iz enumeracija (pod a su eksplicitno navedene, pod b idu po default-u od 0)
+	i odraditi bitske operacije.
+	
+	Npr za Prognoza p = Prognoza.Oblaci | Prognoza.Kisa | Prognoza.Vetar;
+	Za pod a) to je bukv izraz (2 | 4 | 8)
+	Binarno:
+		0010
+		0100
+		1000
+		----
+		1110
+	=> U p je vrednost 14 jer su vrednosti enumeracije svakako po default-u integeri
+	=> Sad se samo radi izraz bitsko i sa vrednoscu p, i onaj koji je razlicit od 0 se ispisuje
+	
+	slicno i kad je enumeracije pod b samo druge vrednosti...
+	
+	
+11.
+	U ovaj zadatak je fora da se uoci da property Povrsina nema kljucnu rec override u izvedenoj klasi
+	pa samim tim ce poziv iz main-a k.Povrsina da bude iz osnovne klase.
+	
+	Ostalo je jednostavno, ulazi u konstruktor ali ne ispisuje odma nego zove base(a, b), e on ispisuje pa se vrati u telo konstruktora izvedene klase pa to ispise, onda ide poziv povrsine
+	koji se cita iz osnovne klase i zapremina klasika posto je cast-ovan se cita iz izvedene jer nigde
+	drugde ni nema property Zapremina

@@ -1,0 +1,10 @@
+11.
+
+	Treba uociti da je int i = 0; iznad for petlje sto znaci da je neka fora sa promenljivom i verovatno
+	
+	Kroz for petlju se listi delegata dodaje funkcija Console.WriteLine(i);
+	
+	Na prvi pogled deluje da ce da se ispise 0, 1, 2, 3 ... 9
+	
+	Medjutim kad pocne da se printa vrednost promenljive i je 10 (posle for petlje),
+	tako da je izlaz ipak 10 10 10 ... 10 svaki u novom redu jer je Console.WriteLine();

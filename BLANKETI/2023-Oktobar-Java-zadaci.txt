@@ -1,0 +1,40 @@
+7.
+	Atribut a je privatni, ne moze da mu se pristupa iz izvedene klase. Treba da se stavi na protected.
+	Onda mora da ima default-ni konstruktor u klasi Kvadrat ili da se u konstruktoru izvedene klase pozove super(a). Ako se tako poziva onda atribut a moze da ostane private.
+	Metoda povrsina radi return 6*povrsina() sto poziva samu sebe i vrv se pravi stack overflow
+	Znaci trebalo bi da ide return 6 * super.povrsina() da bi pozvao povrsinu iz osnovne.
+
+8.
+	public void ucitajBin(String putanja)
+	{
+		try {
+			FileInputStream fis = new FileInputStream(putanja);
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			DataInputStream dis = new DataInputStream(bis);
+			
+			this.a = dis.readDouble();
+			
+			dis.close();
+		}
+		catch (IOException e) {
+			System.out.println(e);
+		}
+	}
+
+	... slicno i za txt
+
+9.
+
+	Ako ocemo da se izracunava u posebnoj niti mora da nasledi klasu Thread ili da implementira interfejs Runnable. Ovde mora da implementira interfejs Runnable jer vec nasledjuje klasu Kvadrat, a u Javi ne postoji visestruko nasledjivanje. Samim tim mora da override-uje metodu void run()
+
+public class Kocka extends Kvadrat implements Runnable
+{
+	...
+	...
+	...
+
+	public void run() {
+		double rez = povrsina();
+		System.out.println(res);
+	}
+}
