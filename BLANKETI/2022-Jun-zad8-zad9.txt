@@ -36,44 +36,41 @@
 
 
 9.
-	Ovo je slican primer kao od martinove prezentacije samo prostije
-	Bukv klasicna klasa samo na obe metode treba dodati kljucnu rez synchronized
-	Znaci: public synchronized void Add(int el) { ... }
-	       public synchronized void Remove(int pozicija) { ... }
+	Ovo je slican primer kao od martinove prezentacije samo obratiti paznju pise sinhronizovani blokovi!
 
-	Tako se zakljucava objekat kad jedna niz dodaje ili brise element i druga nit ne moze da izvrsi ove metode.
-	
-	
 	public class Buffer {
-
-		private int niz[];
-		private int dim;
+	    private int size;
+		private int [] data;
 		private int brTr;
 		
-		public Buffer(int dim) {
-			this.dim = dim;
+		public Buffer (int size) {
 			this.brTr = 0;
-			this.niz = new int[dim];
+			this.size = size;
+			data = new int [size];
 		}
 		
-		// bacam RuntimeException jer ne mora pisem throws posle imena funkcija
-		// i ne mora rokam u try-catch u main (al moze i throw new Exception("poruka") al onda
-		// posle imena funkcije ide throws Exception
-		public synchronized void Add(int el) {
-			if (brTr == dim)
-				throw new RuntimeException("Nema mesta vise");
-			
-			niz[brTr++] = el;
+		public void Add(int el) throws Exception {
+			synchronized (this) {
+				if (brTr == size)
+					throw new Exception("prepunjeno");
+				data[brTr++] = el;
+				System.out.println("upisano: " + el);
+			}		
 		}
 		
-		public synchronized void Remove(int pos) {
+		public void Remove(int pos) throws Exception {
 			
-			if (pos < 0 || pos >= brTr || brTr == 0)
-				throw new RuntimeException("Greska. Indeks van granica ili je niz prazan.");
-		
-			for (int j = pos; j < brTr - 1; ++j) {
-				niz[j] = niz[j+1];
+			synchronized (this) {
+				if (brTr == 0 || pos < 0 || pos >= brTr)
+					throw new Exception("prazno ili nevalidna pozicija");
+				
+				int obrisan = data[pos];
+				for (int i = pos; i < brTr - 1; ++i)
+					data[i] = data[i+1];
+				
+				brTr--;
+				System.out.println("obrisano: " + obrisan);
 			}
-			--brTr;
-		}	
+			
+		}
 	}
