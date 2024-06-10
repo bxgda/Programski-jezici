@@ -44,20 +44,22 @@ namespace Probni
 
     public class DonjetrougaonaMatrica : IMatrica
     {
-        private double[,] matrica;
+        private double[][] matrica;
 
         public DonjetrougaonaMatrica(int dim) {
-            matrica = new double[dim, dim];
+            matrica = new double[dim][];
             Random r = new Random();
-            for (int i = 0; i < dim; i++)
-                for (int j = 0; j < i; j++)
-                    matrica[i, j] = r.Next(1, 10);       
+            for (int i = 0; i < dim; i++) {
+				matrica[i] = new double[i + 1];
+				for (int j = 0; j <= i; j++)
+                    matrica[i][j] = r.Next(1, 10);  
+			}				
         }
 
         public double this[int i, int j] {
             get {
                 if (i >= j) { // sve ispod glavne dijagonale
-                    return matrica[i, j];
+                    return matrica[i][j];
                 }
                 return 0;
             }
