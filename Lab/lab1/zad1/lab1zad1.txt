@@ -1,0 +1,35 @@
+Java lab 1 2024 - Grupa 1
+
+Na programskom jeziku Java kreirati aplikaciju za rad sa porukama. U paketu
+korespondencija Implementirati klase za rad sa SMS porukama, mejlovima i chat
+porukama. Sve tri klase treba da implementiraju interfejs Poruka sa tri metoda:
+validiraj, ispiši i arhiviraj. Metod validiraj vraća dužinu teksta poruke ukoliko je
+poruka validna, odnosno -1 ukoliko je poruka nevalidna. SMS je nevalidan ako
+broj telefona primaoca ima manje od 9 cifara, mejl je nevalidan ukoliko adresa
+primaoca nema karakter @ (za proveru se može iskoristiti metod contains klase
+String), a chat poruka je nevalidna ukoliko je tekst poruke prazan (dužina stringa
+je 0). Metod ispiši ispisuje sadržaj poruke na ekran, a metod arhiviraj upisuje
+sadržaj poruke u tekstualni fajl. Ime fajla je za SMS broj primaoca, za mejl je
+adresa do znaka @ ali bez tog znaka (za ovo se može iskoristiti metod split iz
+klase String), a za chat poruku je username primaoca (na svaki naziv treba dodati
+ekstenziju ".txt"). Svi tipovi poruka treba da implementiraju i fabrički interfejs
+Comparable parametrizovan interfejsom Poruka. Izvan paketa implementirati
+generičku klasu Telefon parametrizovanu generičkim tipom T ograničenim
+interfejsom Poruka. Klasa Telefon čuva poruke u objektu tipa ArrayList, a koji je
+parametrizovan generičkim tipom klase Telefon i ima metod dodajPoruku koji
+dodaje poruku u listu, metod zavediRed koji sortira listu poruka prema dužini
+tela poruke i metod pročitajPoruku. Metod pročitajPoruku čita poruku iz liste,
+štampa njeno telo na ekran i upisuje ga u tekstualni fajl zovući odgovarajuće
+metode poruke. Ovaj metod svaki put čita sledeću poruku iz liste poruke, počev
+od poslednje unazad. Svaki poziv metoda čita jednu poruku, sve dok u listi ima
+poruka. Svaki put kad metod pročita poruku vratiće 1, a kada pokuša čitanje
+nakon što su sve poruke iz liste pročitane, vratiće -1. Ukoliko ovaj metod pročita
+nevalidnu poruku baciće izuzetak tipa NevalidnaPoruka, definisan u paketu
+izuzeci, a koji se hvata u main funkciji. U main funkciji, takođe van paketa,
+kreirati po jedan objekat od sva tri tipa poruke (podatke za ove objekte učitati
+sa tastature), kreirati jedan telefon, upisati poruke u telefon, sortirati ih i očitati
+jednu po jednu. Ukoliko se koristi klasa Scanner, u nekim situacijama je potrebno
+dodati jedan prazan poziv funkcije nextLine da apsorbuje pritisak na taster Enter
+kako sledeći unos ne bi bio ometen. Prilikom svakog čitanja poruke
+inkrementirati lokalni brojač poruka, i nakon čitanja vrednost brojača upisati u
+binarni fajl izlaz.bin.

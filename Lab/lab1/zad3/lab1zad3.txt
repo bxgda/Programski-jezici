@@ -1,0 +1,31 @@
+Java lab 1 2024 - Grupa 3
+
+Na programskom jeziku Java modelovati turističku agenciju. Interfejs Put,
+definisan u paketu turizam, sadrži metod koji vraća cenu (double) i metod koji
+upisuje dati objekat u tekstualnu datoteku. Klase Letovanje i Zimovanje
+implementiraju interfejs Put i fabrički interfejs Comparable<Put>. Ime
+tekstualne datoteke je cena putovanja (na koju treba dodati ekstenziju ".txt"), a
+sadržaj datoteke je prva reč naziva destinacije (za ovo se može iskoristiti funkcija
+split iz klase String). Letovanje sadrži naziv destinacije, broj dana i cenu po danu.
+Zimovanje sadrži naziv destinacije, broj dana, cenu po danu i cenu ski pasa po
+danu. Konačna cena letovanja je nominalna cena pomnožena slučajnim
+koeficijentom inflacije koji može ići od 1 do 2 (može se koristiti fabrička funkcija
+Math.random() koja vraća double između 0.0 i 1.0). Konačna cena zimovanja je
+ukupna cena za sve dane plus cena za ski pas umanjena za dva dana zbog
+popusta (računa se da zimovanje neće biti kraće od 2 dana).
+
+Generičku klasu Agencija definisati izvan paketa. Klasa je parametrizovana tipom
+koji je ograničen interfejsom Put. Unutar klase putevi se čuvaju u objektu
+fabričke klase ArrayList, parametrizovanim generičkim tipom klase. Agencija ima
+metod za dodavanje puta u listu puteva, kao i metod za uvođenje reda u puteve,
+koji sortira puteve po ceni i upisuje svaki od puteva u odgovarajući tekstualni
+fajl, a cenu najskupljeg puta upisuje u binarni fajl "ekskluziva.bin". Ukoliko,
+međutim, cena najskupljeg puta bude veća od 2000 eura, treba baciti izuzetak
+tipa Preskupo (definisan u paketu inflacija) pre bilo kakvog upisivanja u
+datoteke. Ovaj izuzetak biće uhvaćen u main funkciji.
+
+U glavnoj klasi, van paketa, u main funkciji napraviti jednu agenciju i nekoliko
+puteva (podatke o putevima uneti sa tastature, pri čemu ukoliko se koristi
+Scanner klasa, u nekim situacijama između dva unosa treba dodati jedan prazan
+poziv nextLine koji apsorbuje pritisnut taster Enter). Uneti puteve u agencijski
+katalog i uvesti red u puteve.

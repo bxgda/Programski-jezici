@@ -1,6 +1,0 @@
-F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad3\Podaci\bin\Debug\Podaci.dll
-F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad3\Podaci\bin\Debug\Podaci.pdb
-F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad3\Podaci\obj\Debug\Podaci.csproj.AssemblyReference.cache
-F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad3\Podaci\obj\Debug\Podaci.csproj.CoreCompileInputs.cache
-F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad3\Podaci\obj\Debug\Podaci.dll
-F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad3\Podaci\obj\Debug\Podaci.pdb

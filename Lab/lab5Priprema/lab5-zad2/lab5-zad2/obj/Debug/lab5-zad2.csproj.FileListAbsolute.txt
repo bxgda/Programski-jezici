@@ -1,0 +1,13 @@
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\bin\Debug\lab5-zad2.exe.config
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\bin\Debug\lab5-zad2.exe
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\bin\Debug\lab5-zad2.pdb
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\bin\Debug\Podaci.dll
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\bin\Debug\Podaci.pdb
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\obj\Debug\lab5-zad2.csproj.AssemblyReference.cache
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\obj\Debug\lab5_zad2.Form1.resources
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\obj\Debug\lab5_zad2.Properties.Resources.resources
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\obj\Debug\lab5-zad2.csproj.GenerateResource.cache
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\obj\Debug\lab5-zad2.csproj.CoreCompileInputs.cache
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\obj\Debug\lab5-zad2.csproj.Up2Date
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\obj\Debug\lab5-zad2.exe
+F:\Johnny\1FAKS\2.godina\4.semestar\programski jezici\c#\lab5-zad2\lab5-zad2\obj\Debug\lab5-zad2.pdb
